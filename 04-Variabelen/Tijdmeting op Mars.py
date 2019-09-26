@@ -1,12 +1,13 @@
-#invoer
-sol = int(input('Geef aantal sol: '))
+# invoer
+aantal_sol = float(input('sol: '))
 
-#berekening
-sol = 'aantal_sol'
-#dag = 1440 min
-#1 sol = 1440.5874 min
-#verhouding sol/dag = 1.0004079166666666
-uitvoer = 'aantal_sol' + ' aantal_sol ' + '= ' + 'sol * 1.0004079166666666'
 
-#uitvoer
-print(uitvoer)
+# berekeningen
+een_sol = ( 60 * 60 * 24 ) + ( 39 * 60 ) + 35.244
+d = (aantal_sol * een_sol) // ( 60 * 60 * 24 )
+u = ((aantal_sol * een_sol) % ( 60 * 60 * 24 )) // ( 60 * 60 )
+m = (((aantal_sol * een_sol) % ( 60 * 60 * 24 )) % ( 60 * 60 )) // 60
+s = ((((aantal_sol * een_sol) % ( 60 * 60 * 24 )) % ( 60 * 60 )) % 60) % 60
+
+# uitvoer
+print(int(aantal_sol), 'sol =', int(d), 'dagen,',int(u), 'uren,', int(m), 'minuten en', int(s), 'seconden')
