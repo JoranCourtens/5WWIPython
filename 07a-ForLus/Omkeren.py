@@ -1,3 +1,2 @@
 #invoer
-for letter in 'programmeren':
-    print
+woord = input(str('Geef woord: '))
