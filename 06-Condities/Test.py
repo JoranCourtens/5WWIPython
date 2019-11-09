@@ -41,3 +41,4 @@ else:
     uitvoer = 'gelijk aan nul'
 
 print(uitvoer)
+
