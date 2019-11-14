@@ -10,3 +10,4 @@ procent_bedekt = float((aantal_cirkels * (r_klein ** 2) * pi) / ((r_groot ** 2) 
 #uitvoer
 uitvoer = '{:d} kleine cirkels bedekken {:.2f}% van de grote cirkel'
 print(uitvoer.format(aantal_cirkels, procent_bedekt))
+
