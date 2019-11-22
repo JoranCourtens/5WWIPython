@@ -1,26 +1,23 @@
 #invoer
-bruto_jaarsalaris = float(input('Geef bruto jaarsalaris: '))
+bruto_salaris = float(input('Bruto jaarsalaris? '))
 
 #berekening
+rsz = bruto_salaris * 0.1307
+netto_belastbaar = bruto_salaris - rsz
 
-rsz_aftrek = (bruto_jaarsalaris / 100) * 13.07
-belastingen_schijf_1 = ((4390 / 100) * 25)
-print(belastingen_schijf_1)
-belastingen_schijf_2 = (((bruto_jaarsalaris - rsz_aftrek - 10140.00) / 100) * 40)
-print(belastingen_schijf_2)
-belastingen_schijf_3 = (((bruto_jaarsalaris - rsz_aftrek - 23390.00) / 100) * 45)
-print(belastingen_schijf_3)
-belastingen_schijf_4 = (((bruto_jaarsalaris - rsz_aftrek - 40480.01) / 100) * 50)
-print(belastingen_schijf_4)
+schijf_1 = max(min(netto_belastbaar, 13250) - 8860, 0) * 0.25
+schijf_2 = max(min(netto_belastbaar, 23390) - 13250.01, 0) * 0.4
+schijf_3 = max(min(netto_belastbaar, 40480) - 23390.01, 0) * 0.45
+schijf_4 = max(netto_belastbaar - 40480.01, 0) * 0.5
 
-if(bruto_jaarsalaris - rsz_aftrek) < 8860.00:
-    voorheffing = 0.00
-elif(bruto_jaarsalaris - rsz_aftrek) <= 13250.00:
-    voorheffing = belastingen_schijf_1
-elif(bruto_jaarsalaris - rsz_aftrek) <= 23390.00:
-    voorheffing = belastingen_schijf_1 + belastingen_schijf_2
-elif(bruto_jaarsalaris - rsz_aftrek) <= 40480.00:
-    voorheffing = belastingen_schijf_1 + belastingen_schijf_2 + belastingen_schijf_3
-else:
-    voorheffing = belastingen_schijf_1 + belastingen_schijf_2 + belastingen_schijf_3 + belastingen_schijf_4
-print(float(voorheffing))
+voorheffing = schijf_1 + schijf_2 + schijf_3 + schijf_4
+netto_inkomen = netto_belastbaar - voorheffing
+
+#uitvoer
+uitvoer = '{:<20}{:>10.2f}'
+print(uitvoer.format('+ bruto jaarsalaris', bruto_salaris))
+print(uitvoer.format('- rsz', rsz))
+print(uitvoer.format('- voorheffing', voorheffing))
+print(30 * '=')
+print(uitvoer.format('+ netto jaarsalaris', netto_inkomen))
+print(uitvoer.format('+ netto maandsalaris', netto_inkomen / 12))
