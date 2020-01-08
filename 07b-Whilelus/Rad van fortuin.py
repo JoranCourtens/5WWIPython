@@ -10,4 +10,6 @@ while letter in woord and not letter in gegokte_letters:
     gegokte_letters += letter
     gewonnen_bedrag += geldbedrag
     letter = input('Geef letter: ')
+
+#uitvoer
 print(gewonnen_bedrag)
