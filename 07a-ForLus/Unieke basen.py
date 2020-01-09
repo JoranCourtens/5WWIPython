@@ -1,35 +1,21 @@
 #invoer
-aantal_basen = int(input('Aantal basen: '))
+aantal = int(input('geef het aantal keer: '))
 
 #berekening
-type_a = 0
-type_t = 0
-type_g = 0
-type_c = 0
-
-basen = ''
-
-for i in range(aantal_basen):
-    type = str(input('Type base: '))
-
-    if 'A' in type:
-        type_a = 1
-        basen = 'A '
-
-    elif 'T' in type:
-        type_t = 1
-        basen = 'T '
-
-    elif 'G' in type:
-        type_g = 1
-        basen = 'G '
-
-    elif 'C' in type:
-        type_c = 1
-        basen = 'C '
-
-aantal_types = type_a + type_c + type_g + type_t
-
-uitvoer = 'De DNA-keting bevat {} verschillende soorten basen: {}'
-
-print(uitvoer.format(aantal_types, basen))
+dna_1, dna_2, dna_3, dna_4 = '', '', '', ''
+verschillende = 0
+for i in range(aantal):
+    soort = input('geef de soort: ')
+    if soort == 'A':
+        dna_1 = ' A'
+    elif soort == 'T':
+        dna_2 = ' T'
+    elif soort == 'G':
+        dna_3 = ' G'
+    elif soort == 'C':
+        dna_4 = ' C'
+verschillende = int((len(str(dna_1 + dna_2 + dna_3 + dna_4))) / 2)
+if verschillende == 1 or verschillende == 0:
+    print('De DNA-keting bevat', verschillende ,'soort base:' + dna_1 + dna_4 + dna_3 + dna_2)
+else:
+    print('De DNA-keting bevat', verschillende ,'verschillende soorten basen:' + dna_1 + dna_4 + dna_3 + dna_2)
