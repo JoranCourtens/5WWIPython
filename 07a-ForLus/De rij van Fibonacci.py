@@ -1,4 +1,7 @@
+#invoer
 getal = int(input('welk getal: '))
+
+#berekening
 getal_1 = 1
 getal_2 = 0
 
