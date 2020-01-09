@@ -12,3 +12,4 @@ while afstand < afstand_huizen:
 
 print('Na {} s hebben Stijn en Kaat elkaar ontmoet.'.format(seconden))
 
+
