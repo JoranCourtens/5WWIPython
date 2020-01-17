@@ -22,6 +22,7 @@ while aantal < aantal_gevraagd:
 print(som)
 
 
+
 def welkom(naam):
     print('Welkom terug ' + naam)
 
@@ -32,6 +33,7 @@ welkom(welkom('Dominiek'))
 
 test = welkom('Dominiek')
 print(test)
+
 
 
 def pythagoras(a, b):
