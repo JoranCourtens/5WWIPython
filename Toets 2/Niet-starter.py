@@ -5,6 +5,7 @@ getal = float(input('Geef het getal: '))
 som = 0
 n = 1
 aantal_keer = 0
+
 while som < getal:
     som += 1 / (n * 2)
     n *= 2
