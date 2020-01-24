@@ -12,7 +12,8 @@ def roteer_letter(letter, plaatsen):
     offset = nieuw_volgnummer - volgnummer_letter
     return chr(ord(letter) + offset)
 
-
+def versleutel
+    ...
 
 
 
