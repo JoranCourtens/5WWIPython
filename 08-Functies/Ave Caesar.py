@@ -12,8 +12,17 @@ def roteer_letter(letter, plaatsen):
     offset = nieuw_volgnummer - volgnummer_letter
     return chr(ord(letter) + offset)
 
-def versleutel
-    ...
+
+def versleutel(zin, plaatsen):
+    uitvoer = ''
+    for letter in zin:
+        if str(is_letter(letter)) == 'True':
+            letter = roteer_letter(letter, plaatsen)
+            uitvoer += letter
+        else:
+            uitvoer += letter
+
+    return uitvoer
 
 
 
